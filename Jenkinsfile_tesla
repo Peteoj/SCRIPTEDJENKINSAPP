@@ -11,7 +11,7 @@ node{
     sh "${mavenHome}/bin/mvn  sonar:sonar"
   }
   stage('4uploadArtifacts'){
-    //sh "${mavenHome}/bin/mvn deploy"
+    sh "${mavenHome}/bin/mvn deploy"
     //http://18.118.49.68:8081/repository/JenkRelease/
     //http://18.118.49.68:8081/repository/JenkSnapshot/
     // vi pom.xml and added repository details   
