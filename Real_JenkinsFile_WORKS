@@ -1,7 +1,7 @@
 node{
   def mavenHome = tool name: 'Maven3.8.6'
   stage('1cloneCode'){
-    git "https://github.com/Org7892/JenkinsApp.git"
+    git "https://github.com/Peteoj/SCRIPTEDJENKINSAPP.git"
   }
   stage('2Test&Build'){
     sh "${mavenHome}/bin/mvn clean package"
