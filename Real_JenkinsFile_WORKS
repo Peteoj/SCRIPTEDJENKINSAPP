@@ -12,7 +12,7 @@ node{
   }
   stage('4uploadArtifacts'){
     sh "${mavenHome}/bin/mvn deploy"
-    //http://18.218.151.93:8081/repository/JenkRelease/
+    //http://18.191.187.144:8081/repository/JenkRelease/
     //http://18.218.151.93:8081/repository/JenkSnapshot/
     // vi pom.xml and added repository details   
     // vi setting.xml and add AUTHENTICATION details  
