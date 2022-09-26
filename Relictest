@@ -1,0 +1,15 @@
+node{
+  def mavenHome = tool name: 'Maven3.8.6'
+  stage('1cloneCode'){
+    git "https://github.com/Peteoj/SCRIPTEDJENKINSAPP.git"
+  }
+  stage('2Test&Build'){
+    sh "${mavenHome}/bin/mvn clean package"
+    //bat "${mavenHome}/bin/mvn clean package"
+  }
+  stage('3deploy2UAT'){
+    sh "echo 'deploy to UAT'  "
+    //edit here if server changes
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials1', path: '', url: 'http://18.217.165.237:8080/')], contextPath: null, war: 'target/*war'
+  }
+ }
